@@ -67,7 +67,7 @@ public class Note {
         System.out.println("\n========================================");
         System.out.println("          BULLETIN DE NOTES             ");
         System.out.println("========================================");
-        System.out.println("Matricule  : " + eleve.getMatricule());
+        System.out.println("Matricule  : " + eleve.getId());
         System.out.println("Nom de l'Eleve  : " + eleve.getNom() + " " + eleve.getPrenom());
         System.out.println("Classe : " + eleve.getClasse().getNom());
         System.out.println("----------------------------------------");
@@ -126,7 +126,7 @@ public class Note {
     private List<Note> getNotesParEleve(Eleve eleve) {
         List<Note> result = new ArrayList<>();
         for (Note n : notes) {
-            if (n.getEleve().getMatricule() == eleve.getMatricule()){
+            if (n.getEleve().getId() == eleve.getId()){
                 result.add(n);
             } 
         }
@@ -139,6 +139,7 @@ public class Note {
         if (moy >= 14) return "Bien";
         if (moy >= 12) return "Assez Bien";
         if (moy >= 10) return "Passable";
-        return "Insuffisant";
+        if (moy >= 8) return "Insuffisant";
+        return "Très insuffisant";
     }
 }
