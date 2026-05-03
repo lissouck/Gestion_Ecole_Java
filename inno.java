@@ -1,22 +1,41 @@
-public class Enseignant {
-    private String id;
-    private String nom;
-    private String matiere;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Enseignant(String id, String nom, String matiere) {
-        this.id = id;
-        this.nom = nom;
-        this.matiere = matiere;
+public class GestionEnseignants {
+    private List<Enseignant> listeEnseignants;
+
+    public GestionEnseignants() {
+        this.listeEnseignants = new ArrayList<>();
     }
 
-    // Getters et Setters
-    public String getId() { return id; }
-    public String getNom() { return nom; }
-    public String getMatiere() { return matiere; }
-    public void setMatiere(String matiere) { this.matiere = matiere; }
+    // Ajouter un enseignant
+    public void ajouterEnseignant(Enseignant e) {
+        listeEnseignants.add(e);
+        System.out.println("Enseignant ajouté avec succès.");
+    }
 
-    @Override
-    public String toString() {
-        return "ID: " + id + " | Nom: " + nom + " | Matière: " + matiere;
+    // Supprimer un enseignant par ID
+    public void supprimerEnseignant(String id) {
+        boolean trouve = false;
+        for (int i = 0; i < listeEnseignants.size(); i++) {
+            if (listeEnseignants.get(i).getId().equals(id)) {
+                listeEnseignants.remove(i);
+                System.out.println("Enseignant supprimé.");
+                trouve = true;
+                break;
+            }
+        }
+        if (!trouve) System.out.println("Enseignant non trouvé.");
+    }
+
+    // Afficher tous les enseignants
+    public void afficherEnseignants() {
+        if (listeEnseignants.isEmpty()) {
+            System.out.println("Aucun enseignant dans la liste.");
+        } else {
+            for (Enseignant e : listeEnseignants) {
+                System.out.println(e);
+            }
+        }
     }
 }
