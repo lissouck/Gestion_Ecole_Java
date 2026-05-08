@@ -16,5 +16,14 @@ import java.util.List;
  * @version 1.0
  */
 public class NoteService {
+    private final NoteRepository  noteRepository;
+    private final EleveService    eleveService;
+    private final MatiereService  matiereService;
 
+    public NoteService(NoteRepository noteRepository,
+                       EleveService eleveService,
+                       MatiereService matiereService) {
+        this.noteRepository = noteRepository;
+        this.eleveService   = eleveService;
+        this.matiereService = matiereService;
 }
