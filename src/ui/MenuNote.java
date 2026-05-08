@@ -28,7 +28,7 @@ public class MenuNote {
         boolean continuer = true;
         while (continuer) {
             System.out.println("\n┌─────────────────────────────────────┐");
-            System.out.println("│        📝  GESTION DES NOTES         │");
+            System.out.println("│           GESTION DES NOTES         │");
             System.out.println("├─────────────────────────────────────┤");
             System.out.println("│  1. Ajouter une note                │");
             System.out.println("│  2. Voir les notes d'un élève       │");
@@ -65,9 +65,9 @@ public class MenuNote {
             String date        = Validateur.lireChaine("  Date (JJ/MM/AAAA) : ");
 
             Note note = noteService.ajouterNote(eleveId, matiereId, valeur, commentaire, date);
-            System.out.printf("  ✅ Note ajoutée ! (%.2f — %s)%n", note.getValeur(), note.getMention());
+            System.out.printf("    Note ajoutée ! (%.2f — %s)%n", note.getValeur(), note.getMention());
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -93,7 +93,7 @@ public class MenuNote {
                         n.getMention(), n.getDateEvaluation(), n.getCommentaire());
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -110,7 +110,7 @@ public class MenuNote {
                 System.out.printf("  Moyenne générale (pondérée) : %.2f/20%n", moy);
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -121,7 +121,7 @@ public class MenuNote {
             int id = Validateur.lireEntier("  ID de l'élève : ");
             System.out.println(noteService.genererBulletin(id));
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -142,7 +142,7 @@ public class MenuNote {
                 System.out.printf("  Note minimale        : %.2f/20%n", min);
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -160,10 +160,10 @@ public class MenuNote {
             int id = Validateur.lireEntier("  ID de la note à supprimer : ");
             if (Validateur.confirmer("  Confirmer la suppression ?")) {
                 noteService.supprimerNote(id);
-                System.out.println("  ✅ Note supprimée.");
+                System.out.println("    Note supprimée.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 }

@@ -31,7 +31,7 @@ public class MenuClasse {
         boolean continuer = true;
         while (continuer) {
             System.out.println("\n┌─────────────────────────────────────┐");
-            System.out.println("│       🏫  GESTION DES CLASSES        │");
+            System.out.println("│          GESTION DES CLASSES        │");
             System.out.println("├─────────────────────────────────────┤");
             System.out.println("│  1. Créer une classe                │");
             System.out.println("│  2. Afficher toutes les classes     │");
@@ -66,9 +66,9 @@ public class MenuClasse {
             String nom    = Validateur.lireChaine("  Nom (ex: 3ème A)  : ");
             String niveau = Validateur.lireChaine("  Niveau (ex: Collège) : ");
             Classe c = classeService.creerClasse(nom, niveau);
-            System.out.println("  ✅ Classe créée ! ID = " + c.getId());
+            System.out.println("    Classe créée ! ID = " + c.getId());
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -115,7 +115,7 @@ public class MenuClasse {
                 }
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -127,9 +127,9 @@ public class MenuClasse {
             int classeId = Validateur.lireEntier("  ID de la classe : ");
             int eleveId  = Validateur.lireEntier("  ID de l'élève   : ");
             classeService.ajouterEleveDansClasse(classeId, eleveId);
-            System.out.println("  ✅ Élève ajouté dans la classe !");
+            System.out.println("    Élève ajouté dans la classe !");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -143,9 +143,9 @@ public class MenuClasse {
             c.getEleves().forEach(e -> System.out.printf("    → [%d] %s%n", e.getId(), e.getNomComplet()));
             int eleveId = Validateur.lireEntier("  ID de l'élève à retirer : ");
             classeService.retirerEleveDeLaClasse(classeId, eleveId);
-            System.out.println("  ✅ Élève retiré.");
+            System.out.println("    Élève retiré.");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -159,7 +159,7 @@ public class MenuClasse {
             classeService.affecterProfesseurPrincipal(classeId, professeurId);
             System.out.println("  ✅ Professeur affecté !");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -176,9 +176,9 @@ public class MenuClasse {
             if (niveau.isEmpty()) niveau = c.getNiveau();
 
             classeService.modifierClasse(id, nom, niveau);
-            System.out.println("  ✅ Classe modifiée !");
+            System.out.println("    Classe modifiée !");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -190,10 +190,10 @@ public class MenuClasse {
             Classe c = classeService.trouverParId(id);
             if (Validateur.confirmer("  Supprimer la classe '" + c.getNom() + "' ?")) {
                 classeService.supprimerClasse(id);
-                System.out.println("  ✅ Classe supprimée.");
+                System.out.println("    Classe supprimée.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 }

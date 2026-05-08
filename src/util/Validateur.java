@@ -44,7 +44,7 @@ public class Validateur {
             System.out.print(invite);
             valeur = scanner.nextLine().trim();
             if (valeur.isEmpty()) {
-                System.out.println("  ⚠️  Cette valeur ne peut pas être vide. Veuillez réessayer.");
+                System.out.println("     Cette valeur ne peut pas être vide. Veuillez réessayer.");
             }
         } while (valeur.isEmpty());
         return valeur;
@@ -69,9 +69,9 @@ public class Validateur {
             try {
                 valeur = Integer.parseInt(scanner.nextLine().trim());
                 if (valeur >= min && valeur <= max) return valeur;
-                System.out.printf("  ⚠️  Entrez un nombre entre %d et %d.%n", min, max);
+                System.out.printf("     Entrez un nombre entre %d et %d.%n", min, max);
             } catch (NumberFormatException e) {
-                System.out.println("  ⚠️  Saisie invalide. Entrez un nombre entier.");
+                System.out.println("     Saisie invalide. Entrez un nombre entier.");
             }
         }
     }
@@ -93,9 +93,9 @@ public class Validateur {
             try {
                 valeur = Double.parseDouble(scanner.nextLine().trim().replace(',', '.'));
                 if (valeur >= min && valeur <= max) return valeur;
-                System.out.printf("  ⚠️  Entrez une valeur entre %.1f et %.1f.%n", min, max);
+                System.out.printf("    Entrez une valeur entre %.1f et %.1f.%n", min, max);
             } catch (NumberFormatException e) {
-                System.out.println("  ⚠️  Saisie invalide. Entrez un nombre décimal.");
+                System.out.println("     Saisie invalide. Entrez un nombre décimal.");
             }
         }
     }

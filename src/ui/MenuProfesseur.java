@@ -24,7 +24,7 @@ public class MenuProfesseur {
         boolean continuer = true;
         while (continuer) {
             System.out.println("\n┌─────────────────────────────────────┐");
-            System.out.println("│     👨‍🏫  GESTION DES ENSEIGNANTS      │");
+            System.out.println("│        GESTION DES ENSEIGNANTS      │");
             System.out.println("├─────────────────────────────────────┤");
             System.out.println("│  1. Ajouter un professeur           │");
             System.out.println("│  2. Afficher tous les professeurs   │");
@@ -58,9 +58,9 @@ public class MenuProfesseur {
 
             Professeur prof = professeurService.ajouterProfesseur(
                     nom, prenom, email, telephone, specialite);
-            System.out.println("  ✅ Professeur ajouté ! ID = " + prof.getId());
+            System.out.println("    Professeur ajouté ! ID = " + prof.getId());
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -134,9 +134,9 @@ public class MenuProfesseur {
             if (spec.isEmpty()) spec = prof.getSpecialite();
 
             professeurService.modifierProfesseur(id, nom, prenom, email, tel, spec);
-            System.out.println("  ✅ Professeur modifié !");
+            System.out.println("    Professeur modifié !");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -149,10 +149,10 @@ public class MenuProfesseur {
             System.out.println("  À supprimer : " + prof.getNomComplet());
             if (Validateur.confirmer("  Confirmer ?")) {
                 professeurService.supprimerProfesseur(id);
-                System.out.println("  ✅ Professeur supprimé.");
+                System.out.println("    Professeur supprimé.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 }

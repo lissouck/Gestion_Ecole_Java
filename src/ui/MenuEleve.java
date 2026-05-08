@@ -27,7 +27,7 @@ public class MenuEleve {
         boolean continuer = true;
         while (continuer) {
             System.out.println("\n┌─────────────────────────────────────┐");
-            System.out.println("│       👨‍🎓  GESTION DES ÉLÈVES         │");
+            System.out.println("│          GESTION DES ÉLÈVES         │");
             System.out.println("├─────────────────────────────────────┤");
             System.out.println("│  1. Ajouter un élève                │");
             System.out.println("│  2. Afficher tous les élèves        │");
@@ -62,9 +62,9 @@ public class MenuEleve {
             String telephone = Validateur.lireChaineOptionnelle("  Téléphone  : ");
 
             Eleve eleve = eleveService.ajouterEleve(nom, prenom, age, email, telephone);
-            System.out.println("  ✅ Élève ajouté avec succès ! ID = " + eleve.getId());
+            System.out.println("    Élève ajouté avec succès ! ID = " + eleve.getId());
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -136,9 +136,9 @@ public class MenuEleve {
             if (tel.isEmpty()) tel = eleve.getTelephone();
 
             eleveService.modifierEleve(id, nom, prenom, age, email, tel);
-            System.out.println("  ✅ Élève modifié avec succès !");
+            System.out.println("    Élève modifié avec succès !");
         } catch (IllegalArgumentException | NumberFormatException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -155,12 +155,12 @@ public class MenuEleve {
             System.out.println("  Élève à supprimer : " + eleve.getNomComplet());
             if (Validateur.confirmer("  Êtes-vous sûr ?")) {
                 eleveService.supprimerEleve(id);
-                System.out.println("  ✅ Élève supprimé.");
+                System.out.println("    Élève supprimé.");
             } else {
                 System.out.println("  Suppression annulée.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 }

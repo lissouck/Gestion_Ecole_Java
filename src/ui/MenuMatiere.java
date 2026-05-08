@@ -27,7 +27,7 @@ public class MenuMatiere {
         boolean continuer = true;
         while (continuer) {
             System.out.println("\n┌─────────────────────────────────────┐");
-            System.out.println("│       📚  GESTION DES MATIÈRES       │");
+            System.out.println("│          GESTION DES MATIÈRES       │");
             System.out.println("├─────────────────────────────────────┤");
             System.out.println("│  1. Ajouter une matière             │");
             System.out.println("│  2. Afficher toutes les matières    │");
@@ -60,9 +60,9 @@ public class MenuMatiere {
             int    coefficient = Validateur.lireEntier("  Coefficient (1-10) : ", 1, 10);
 
             Matiere m = matiereService.ajouterMatiere(nom, description, coefficient);
-            System.out.println("  ✅ Matière ajoutée ! ID = " + m.getId());
+            System.out.println("    Matière ajoutée ! ID = " + m.getId());
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -102,9 +102,9 @@ public class MenuMatiere {
             int coeff = coeffStr.isEmpty() ? m.getCoefficient() : Integer.parseInt(coeffStr);
 
             matiereService.modifierMatiere(id, nom, desc, coeff);
-            System.out.println("  ✅ Matière modifiée !");
+            System.out.println("    Matière modifiée !");
         } catch (IllegalArgumentException | NumberFormatException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -116,9 +116,9 @@ public class MenuMatiere {
             int matiereId    = Validateur.lireEntier("  ID de la matière    : ");
             int professeurId = Validateur.lireEntier("  ID du professeur    : ");
             matiereService.assignerProfesseur(matiereId, professeurId);
-            System.out.println("  ✅ Professeur assigné !");
+            System.out.println("    Professeur assigné !");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -128,9 +128,9 @@ public class MenuMatiere {
         try {
             int id = Validateur.lireEntier("  ID de la matière : ");
             matiereService.retirerProfesseur(id);
-            System.out.println("  ✅ Professeur retiré.");
+            System.out.println("    Professeur retiré.");
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 
@@ -142,10 +142,10 @@ public class MenuMatiere {
             Matiere m = matiereService.trouverParId(id);
             if (Validateur.confirmer("  Supprimer '" + m.getNom() + "' ?")) {
                 matiereService.supprimerMatiere(id);
-                System.out.println("  ✅ Matière supprimée.");
+                System.out.println("    Matière supprimée.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("  ❌ Erreur : " + e.getMessage());
+            System.out.println("    Erreur : " + e.getMessage());
         }
     }
 }
