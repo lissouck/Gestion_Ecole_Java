@@ -136,7 +136,7 @@ public class NoteService {
         String ligne = "═".repeat(60);
 
         bulletin.append("\n").append(ligne).append("\n");
-        bulletin.append(String.format("  📋 BULLETIN SCOLAIRE — %s\n", eleve.getNomComplet().toUpperCase()));
+        bulletin.append(String.format(" BULLETIN SCOLAIRE — %s\n", eleve.getNomComplet().toUpperCase()));
         bulletin.append(ligne).append("\n");
 
         if (notes.isEmpty()) {
@@ -175,11 +175,11 @@ public class NoteService {
 
     /** Détermine la mention globale selon la moyenne. */
     private String obtenirMentionGlobale(double moyenne) {
-        if (moyenne >= 16) return "🏆 Très Bien — Félicitations !";
-        if (moyenne >= 14) return "🥈 Bien — Encouragements";
-        if (moyenne >= 12) return "🥉 Assez Bien";
-        if (moyenne >= 10) return "✅ Passable — Admis";
-        return "❌ Insuffisant — En difficulté";
+        if (moyenne >= 16) return "Très Bien — Félicitations !";
+        if (moyenne >= 14) return "Bien — Encouragements";
+        if (moyenne >= 12) return "Assez Bien";
+        if (moyenne >= 10) return "Passable — Admis";
+        return "Insuffisant";
     }
 
     // ─── Lecture ──────────────────────────────────────────────────────────────
