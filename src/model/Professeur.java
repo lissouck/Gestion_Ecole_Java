@@ -1,3 +1,11 @@
+package model;
+
+/**
+ * Représente un professeur dans l'école secondaire.
+ *
+ * @author Module Enseignants
+ * @version 1.0
+ */
 public class Professeur {
 
     private int    id;
