@@ -11,7 +11,7 @@ public class Matiere {
     private int        id;
     private String     nom;
     private String     description;
-    private int        coefficipent;   // Coefficient pour le calcul de la moyenne
+    private int        coefficient;   // Coefficient pour le calcul de la moyenne
     private Professeur professeur;    // Enseignant responsable (peut être null)
 
     private static int compteurId = 1;
