@@ -1,3 +1,11 @@
+package model;
+
+/**
+ * Représente une matière enseignée dans l'école.
+ *
+ * @author Module Matières
+ * @version 1.0
+ */
 public class Matiere {
 
     private int        id;

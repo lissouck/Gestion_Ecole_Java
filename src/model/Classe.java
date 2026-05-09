@@ -1,3 +1,12 @@
+package model;
+
+/**
+ * Représente un élève dans l'école secondaire.
+ * Contient les informations personnelles de l'élève.
+ *
+ * @author Module Élèves
+ * @version 1.0
+ */
 public class Classe {
 
     private int        id;
